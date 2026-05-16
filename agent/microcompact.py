@@ -106,7 +106,7 @@ def _strip_thinking_from_content(content: Any) -> Any:
                     result.append({"type": "text", "text": text})
             else:
                 result.append(part)
-        return result if result else ""
+        return result if result else []
 
     return content
 
@@ -179,12 +179,14 @@ def microcompact_messages(
         if role == "tool":
             content_len = _content_char_count(content)
 
-            # Strip empty/trivial tool results
+            # Strip empty/trivial tool results — replace with stub to preserve protocol
             if strip_empty_tool_results:
                 content_str = content if isinstance(content, str) else str(content)
                 if content_str.strip().lower() in ("", "ok", "done", "success", "null", "none"):
-                    messages_removed += 1
+                    # Keep the message but minimize content (preserves tool_call_id pairing)
                     chars_saved += content_len
+                    msg = {**msg, "content": "[completed]"}
+                    compacted_head.append(msg)
                     i += 1
                     continue
 
@@ -193,12 +195,12 @@ def microcompact_messages(
                 chars_saved += content_len - max_tool_result_chars
                 msg = {**msg, "content": _truncate_content(content, max_tool_result_chars)}
             elif max_tool_result_chars == 0:
-                # Remove entirely, replace with brief note
+                # Replace with brief note (preserves message for protocol compliance)
                 tool_name = msg.get("name", "tool")
                 chars_saved += content_len
                 msg = {**msg, "content": f"[{tool_name} result omitted for brevity]"}
 
-        # Handle assistant messages with tool_calls (truncate arguments)
+        # Handle assistant messages with tool_calls (summarize arguments, keep valid JSON)
         if role == "assistant" and msg.get("tool_calls"):
             tool_calls = msg["tool_calls"]
             compacted_calls = []
@@ -206,8 +208,9 @@ def microcompact_messages(
                 fn = tc.get("function", {})
                 args = fn.get("arguments", "{}")
                 if len(args) > 200:
-                    chars_saved += len(args) - 200
-                    fn = {**fn, "arguments": args[:200] + "..."}
+                    # Replace with empty JSON object to keep valid JSON
+                    chars_saved += len(args) - 2
+                    fn = {**fn, "arguments": "{}"}
                     tc = {**tc, "function": fn}
                 compacted_calls.append(tc)
             msg = {**msg, "tool_calls": compacted_calls}

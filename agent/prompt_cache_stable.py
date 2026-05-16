@@ -83,7 +83,7 @@ class CacheStablePromptBuilder:
     def get_stable_hash(self) -> str:
         """Get a hash of the stable sections for cache invalidation detection."""
         stable_content = "\n\n".join(self._stable_sections)
-        return hashlib.md5(stable_content.encode()).hexdigest()[:12]
+        return hashlib.sha256(stable_content.encode()).hexdigest()[:12]
 
     def would_invalidate_cache(self) -> bool:
         """Check if the stable sections have changed since last build.
@@ -108,6 +108,7 @@ class CacheStablePromptBuilder:
         """Clear all sections for a fresh build."""
         self._stable_sections.clear()
         self._volatile_sections.clear()
+        self._last_stable_hash = None
 
     @property
     def stable_char_count(self) -> int:

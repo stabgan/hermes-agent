@@ -26,77 +26,63 @@ import pytest
 class TestLintGuard:
     """Tests for agent/lint_guard.py"""
 
-    def test_valid_python_passes(self):
+    def test_valid_python_passes(self, tmp_path):
         from agent.lint_guard import lint_file
 
-        with tempfile.NamedTemporaryFile(mode="w", suffix=".py", delete=False) as f:
-            f.write("x = 1\nprint(x)\n")
-            f.flush()
-            result = lint_file(f.name)
-            assert result.passed is True
-            os.unlink(f.name)
+        f = tmp_path / "test.py"
+        f.write_text("x = 1\nprint(x)\n")
+        result = lint_file(str(f))
+        assert result.passed is True
 
-    def test_invalid_python_fails(self):
+    def test_invalid_python_fails(self, tmp_path):
         from agent.lint_guard import lint_file
 
-        with tempfile.NamedTemporaryFile(mode="w", suffix=".py", delete=False) as f:
-            f.write("def foo(\n  # missing closing paren\n")
-            f.flush()
-            result = lint_file(f.name)
-            assert result.passed is False
-            assert result.error  # Should have error message
-            os.unlink(f.name)
+        f = tmp_path / "test.py"
+        f.write_text("def foo(\n  # missing closing paren\n")
+        result = lint_file(str(f))
+        assert result.passed is False
+        assert result.error  # Should have error message
 
-    def test_valid_json_passes(self):
+    def test_valid_json_passes(self, tmp_path):
         from agent.lint_guard import lint_file
 
-        with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as f:
-            f.write('{"key": "value", "num": 42}')
-            f.flush()
-            result = lint_file(f.name)
-            assert result.passed is True
-            os.unlink(f.name)
+        f = tmp_path / "test.json"
+        f.write_text('{"key": "value", "num": 42}')
+        result = lint_file(str(f))
+        assert result.passed is True
 
-    def test_invalid_json_fails(self):
+    def test_invalid_json_fails(self, tmp_path):
         from agent.lint_guard import lint_file
 
-        with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as f:
-            f.write('{"key": "value",}')  # trailing comma
-            f.flush()
-            result = lint_file(f.name)
-            assert result.passed is False
-            os.unlink(f.name)
+        f = tmp_path / "test.json"
+        f.write_text('{"key": "value",}')  # trailing comma
+        result = lint_file(str(f))
+        assert result.passed is False
 
-    def test_valid_bash_passes(self):
+    def test_valid_bash_passes(self, tmp_path):
         from agent.lint_guard import lint_file
 
-        with tempfile.NamedTemporaryFile(mode="w", suffix=".sh", delete=False) as f:
-            f.write("#!/bin/bash\necho hello\n")
-            f.flush()
-            result = lint_file(f.name)
-            assert result.passed is True
-            os.unlink(f.name)
+        f = tmp_path / "test.sh"
+        f.write_text("#!/bin/bash\necho hello\n")
+        result = lint_file(str(f))
+        assert result.passed is True
 
-    def test_invalid_bash_fails(self):
+    def test_invalid_bash_fails(self, tmp_path):
         from agent.lint_guard import lint_file
 
-        with tempfile.NamedTemporaryFile(mode="w", suffix=".sh", delete=False) as f:
-            f.write("#!/bin/bash\nif [ true; then\n")  # missing ]
-            f.flush()
-            result = lint_file(f.name)
-            assert result.passed is False
-            os.unlink(f.name)
+        f = tmp_path / "test.sh"
+        f.write_text("#!/bin/bash\nif [ true; then\n")  # missing ]
+        result = lint_file(str(f))
+        assert result.passed is False
 
-    def test_unknown_extension_passes(self):
+    def test_unknown_extension_passes(self, tmp_path):
         from agent.lint_guard import lint_file
 
-        with tempfile.NamedTemporaryFile(mode="w", suffix=".xyz", delete=False) as f:
-            f.write("anything goes here")
-            f.flush()
-            result = lint_file(f.name)
-            assert result.passed is True
-            assert result.linter == "none"
-            os.unlink(f.name)
+        f = tmp_path / "test.xyz"
+        f.write_text("anything goes here")
+        result = lint_file(str(f))
+        assert result.passed is True
+        assert result.linter == "none"
 
     def test_lint_edit_convenience(self):
         from agent.lint_guard import lint_edit
@@ -471,7 +457,9 @@ class TestMicrocompact:
         ]
         result = microcompact_messages(messages, protect_last_n=1, strip_empty_tool_results=True)
         tool_msgs = [m for m in result if m.get("role") == "tool"]
-        assert len(tool_msgs) == 0  # "ok" result removed
+        # Tool message is kept (for protocol compliance) but content is minimized
+        assert len(tool_msgs) == 1
+        assert tool_msgs[0]["content"] == "[completed]"
 
     def test_protects_tail(self):
         from agent.microcompact import microcompact_messages
@@ -544,7 +532,9 @@ class TestCacheStablePrompt:
         builder.add_stable("Version 1")
         builder.would_invalidate_cache()  # First call sets baseline
 
-        builder.reset()
+        # Don't reset — just clear sections and rebuild with different content
+        builder._stable_sections.clear()
+        builder._volatile_sections.clear()
         builder.add_stable("Version 2")  # Changed!
         assert builder.would_invalidate_cache() is True
 

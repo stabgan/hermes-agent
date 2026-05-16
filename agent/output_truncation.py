@@ -57,15 +57,11 @@ def smart_truncate(
     if not needs_char_truncation and not needs_line_truncation:
         return text
 
-    # Determine effective limit
-    if needs_line_truncation and not needs_char_truncation:
-        # Truncate by lines
-        return _truncate_by_lines(lines, max_lines, total_lines, strategy, context_hint)
-    elif needs_char_truncation:
-        # Truncate by chars (more aggressive)
+    # Determine effective limit (char truncation takes priority as it's more aggressive)
+    if needs_char_truncation:
         return _truncate_by_chars(text, max_chars, total_chars, total_lines, strategy, context_hint)
-
-    return text
+    else:
+        return _truncate_by_lines(lines, max_lines, total_lines, strategy, context_hint)
 
 
 def _truncate_by_lines(
@@ -164,7 +160,7 @@ def truncate_tool_result(
 
     Provides contextual hints based on which tool produced the output.
     """
-    if not result or (len(result) <= max_chars and result.count("\n") <= max_lines):
+    if not result or (len(result) <= max_chars and result.count("\n") + 1 <= max_lines):
         return result
 
     # Tool-specific hints

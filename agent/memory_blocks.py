@@ -31,12 +31,16 @@ from __future__ import annotations
 
 import logging
 import os
+import re
 import time
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 logger = logging.getLogger(__name__)
+
+# Valid block label pattern (prevents path traversal)
+_VALID_LABEL_RE = re.compile(r"^[a-z][a-z0-9_]{0,30}$")
 
 
 @dataclass
@@ -208,6 +212,10 @@ class MemoryBlockStore:
         block = self.blocks.get(label)
         if not block:
             return {"success": False, "error": f"Block '{label}' not found. Available: {list(self.blocks.keys())}"}
+
+        # Validate label to prevent path traversal
+        if not _VALID_LABEL_RE.match(label):
+            return {"success": False, "error": f"Invalid block label '{label}'. Must be lowercase alphanumeric/underscore."}
 
         if len(content) > block.max_chars:
             return {

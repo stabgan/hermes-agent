@@ -108,12 +108,14 @@ def _is_metadata_line(line: str) -> bool:
     # Time/status lines
     if s.startswith("▸ Time:") or s.startswith(" ▸ Time:"):
         return True
-    # Tool execution metadata
-    if any(x in s for x in (
-        "using tool:", "Searching for", "No symbols found",
-        "Completed in", "Looking up", "Reading file",
-        "Reading ", "Running", "Executing",
-    )):
+    # Tool execution metadata (must START with these patterns)
+    if s.startswith("using tool:") or s.startswith("Searching for "):
+        return True
+    if s.startswith("No symbols found") or s.startswith("Completed in "):
+        return True
+    if s.startswith("Looking up ") or s.startswith("Reading file:"):
+        return True
+    if s.startswith("Running tool ") or s.startswith("Executing "):
         return True
     # File paths and scoping
     if s.startswith("/Users/") or "(scoped to:" in s:
@@ -217,11 +219,18 @@ class KiroCliClient:
 
     def _build_command(self) -> list[str]:
         """Build the kiro-cli command with appropriate flags."""
+        # Validate model against allowlist to prevent flag injection
+        if self.model not in KIRO_MODELS:
+            logger.warning("Unknown model '%s', falling back to claude-sonnet-4.6", self.model)
+            model = "claude-sonnet-4.6"
+        else:
+            model = self.model
+
         cmd = [
             self.kiro_cli_path,
             "chat",
             "--no-interactive",
-            "--model", self.model,
+            "--model", model,
             "--trust-all-tools",
             "--wrap", "never",
         ]
@@ -334,7 +343,7 @@ class KiroCliClient:
                 content = "I'm ready to help. What would you like to work on?"
 
         except subprocess.TimeoutExpired:
-            content = "[Response timed out after {self.timeout}s]"
+            content = f"[Response timed out after {self.timeout}s]"
             logger.warning("kiro-cli timed out after %ds", self.timeout)
         except Exception as e:
             content = f"[Error communicating with kiro-cli: {str(e)[:200]}]"
@@ -360,22 +369,24 @@ class KiroCliClient:
     def _stream_completion(self, prompt: str) -> Generator[Dict[str, Any], None, None]:
         """Run kiro-cli and stream output line by line."""
         import fcntl
+        import sys
 
         created = int(time.time())
         completion_id = f"kiro-{created}"
+        process = None
 
         try:
             process = subprocess.Popen(
                 self._build_command(),
                 stdin=subprocess.PIPE,
                 stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
+                stderr=subprocess.DEVNULL,  # Prevent stderr pipe deadlock
                 text=False,
             )
             process.stdin.write(prompt.encode("utf-8"))
             process.stdin.close()
 
-            # Set stdout to non-blocking
+            # Set stdout to non-blocking (Unix only)
             fd = process.stdout.fileno()
             flags = fcntl.fcntl(fd, fcntl.F_GETFL)
             fcntl.fcntl(fd, fcntl.F_SETFL, flags | os.O_NONBLOCK)
@@ -424,6 +435,14 @@ class KiroCliClient:
                         }],
                     }
 
+            # Final drain: read any remaining data after process exits
+            try:
+                remaining_raw = process.stdout.read()
+                if remaining_raw:
+                    buffer += remaining_raw.decode("utf-8", errors="replace")
+            except (BlockingIOError, IOError):
+                pass
+
             # Flush remaining buffer
             if buffer.strip():
                 remaining = _strip_ansi(buffer)
@@ -441,8 +460,6 @@ class KiroCliClient:
                             "finish_reason": None,
                         }],
                     }
-
-            process.wait(timeout=10)
 
             # Final chunk with finish_reason
             yield {
@@ -470,6 +487,11 @@ class KiroCliClient:
                     "finish_reason": "stop",
                 }],
             }
+        finally:
+            # Always clean up the subprocess to prevent zombies
+            if process is not None and process.poll() is None:
+                process.kill()
+                process.wait(timeout=5)
 
 
 # ─── Registration ─────────────────────────────────────────────────────────────
