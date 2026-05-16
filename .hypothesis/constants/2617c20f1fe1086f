@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/agent/lint_guard.py
+# hypothesis_version: 6.151.5
+
+[0.0, 500, 1000, '--allowJs', '--check', '--noEmit', '--skipLibCheck', '-c', '-m', '-n', '.js', '.json', '.py', '.rb', '.rs', '.sh', '.ts', '.yaml', '.yml', 'Bash syntax check', 'JSON syntax check', 'Lint check timed out', 'Node.js syntax check', 'Python syntax check', 'Ruby syntax check', 'Rust format check', 'YAML syntax check', 'bash', 'command', 'description', 'hermes_lint_', 'json.tool', 'node', 'none', 'npx', 'parse_error', 'py_compile', 'python3', 'ruby', 'rustfmt', 'timeout', 'tsc', 'w']

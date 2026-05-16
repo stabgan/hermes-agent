@@ -125,6 +125,10 @@ def lint_file(filepath: str, *, content: Optional[str] = None) -> LintResult:
     """
     import time
 
+    # Type guard: filepath must be a non-empty string
+    if not filepath or not isinstance(filepath, str):
+        return LintResult(passed=True, filepath=str(filepath or ""), linter="none")
+
     path = Path(filepath)
     ext = path.suffix.lower()
 

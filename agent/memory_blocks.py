@@ -217,6 +217,13 @@ class MemoryBlockStore:
         if not _VALID_LABEL_RE.match(label):
             return {"success": False, "error": f"Invalid block label '{label}'. Must be lowercase alphanumeric/underscore."}
 
+        # Type guard: content must be a string
+        if not isinstance(content, str):
+            if content is None:
+                content = ""
+            else:
+                content = str(content)
+
         if len(content) > block.max_chars:
             return {
                 "success": False,
@@ -233,6 +240,13 @@ class MemoryBlockStore:
         if not block:
             return {"success": False, "error": f"Block '{label}' not found."}
 
+        # Type guard
+        if not isinstance(text, str):
+            if text is None:
+                text = ""
+            else:
+                text = str(text)
+
         if not block.append(text):
             return {
                 "success": False,
@@ -247,6 +261,10 @@ class MemoryBlockStore:
         block = self.blocks.get(label)
         if not block:
             return {"success": False, "error": f"Block '{label}' not found."}
+
+        # Type guards
+        if not isinstance(old_text, str) or not isinstance(new_text, str):
+            return {"success": False, "error": "old_text and new_text must be strings."}
 
         if not block.replace(old_text, new_text):
             if old_text not in block.content:

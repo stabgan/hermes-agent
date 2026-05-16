@@ -46,6 +46,10 @@ def smart_truncate(
     if not text:
         return text
 
+    # Type guard: must be a string
+    if not isinstance(text, str):
+        return str(text) if text is not None else ""
+
     lines = text.split("\n")
     total_chars = len(text)
     total_lines = len(lines)
@@ -162,6 +166,10 @@ def truncate_tool_result(
     """
     if not result or (len(result) <= max_chars and result.count("\n") + 1 <= max_lines):
         return result
+
+    # Type guard
+    if not isinstance(result, str):
+        return str(result) if result is not None else ""
 
     # Tool-specific hints
     hints = {

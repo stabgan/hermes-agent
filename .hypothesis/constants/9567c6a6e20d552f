@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/agent/role_profiles.py
+# hypothesis_version: 6.151.5
+
+['architect', 'assert', 'audit', 'break down', 'broken', 'check', 'clean up', 'coverage', 'crash', 'debug', 'debugger', 'decompose', 'delegate_task', 'describe', 'description', 'design', 'developer', 'docs', 'document', 'documenter', 'error', 'evaluate', 'execute_bash', 'explain', 'extract', 'failing', 'find', 'fix', 'hermes-cli', 'inspect', 'look up', 'name', 'patch', 'plan', 'planner', 'readme', 'refactor', 'refactorer', 'research', 'researcher', 'restructure', 'review', 'reviewer', 'run_shell', 'safe', 'search', 'simplify', 'summarize', 'test', 'tester', 'validate', 'verify', 'web', 'what is', 'why', 'write_file']

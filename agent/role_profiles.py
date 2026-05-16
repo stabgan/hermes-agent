@@ -192,6 +192,8 @@ AVAILABLE_ROLES = list(ROLE_PROFILES.keys())
 
 def get_role_profile(role: str) -> Optional[RoleProfile]:
     """Get a role profile by name. Returns None if not found."""
+    if not role or not isinstance(role, str):
+        return None
     return ROLE_PROFILES.get(role.lower().strip())
 
 
@@ -216,6 +218,8 @@ def get_role_for_task(task_description: str) -> str:
 
     Returns the role name that best matches the task.
     """
+    if not task_description or not isinstance(task_description, str):
+        return "developer"
     task_lower = task_description.lower()
 
     # Keyword matching (simple heuristic)

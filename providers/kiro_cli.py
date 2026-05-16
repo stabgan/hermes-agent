@@ -18,16 +18,13 @@ Or via environment:
 
 from __future__ import annotations
 
-import json
 import logging
 import os
 import re
 import subprocess
-import threading
 import time
-from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Dict, Generator, List, Optional
+from typing import Any, Dict, Generator, List
 
 from providers.base import ProviderProfile
 
@@ -90,6 +87,8 @@ KIRO_MAX_OUTPUT = {
 
 def _strip_ansi(text: str) -> str:
     """Remove ALL ANSI escape codes from kiro-cli output."""
+    if not isinstance(text, str):
+        return str(text) if text is not None else ""
     text = re.sub(r"\x1b\[[\d;]*[A-Za-z]", "", text)
     text = re.sub(r"\x1b\[\?[\d;]*[A-Za-z]", "", text)
     text = re.sub(r"\x1b\][\d;]*[^\x07]*\x07", "", text)
@@ -99,6 +98,8 @@ def _strip_ansi(text: str) -> str:
 
 def _is_metadata_line(line: str) -> bool:
     """Check if a line is kiro-cli metadata (spinners, tool output, etc.)."""
+    if not isinstance(line, str):
+        return False
     s = line.strip()
     if not s:
         return False
@@ -141,6 +142,8 @@ _NOISE_PHRASES = frozenset({
 
 def _clean_kiro_output(raw: str) -> str:
     """Clean kiro-cli output: strip ANSI, remove metadata, strip '> ' prefix."""
+    if not isinstance(raw, str):
+        return str(raw) if raw is not None else ""
     clean = _strip_ansi(raw)
     lines = clean.split("\n")
     result = []
@@ -369,7 +372,6 @@ class KiroCliClient:
     def _stream_completion(self, prompt: str) -> Generator[Dict[str, Any], None, None]:
         """Run kiro-cli and stream output line by line."""
         import fcntl
-        import sys
 
         created = int(time.time())
         completion_id = f"kiro-{created}"

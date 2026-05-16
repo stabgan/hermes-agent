@@ -49,22 +49,24 @@ class CacheStablePromptBuilder:
 
         These sections rarely change and form the cacheable prefix.
         """
-        if section and section.strip():
-            if label:
-                self._stable_sections.append(f"<!-- {label} -->\n{section.strip()}")
-            else:
-                self._stable_sections.append(section.strip())
+        if not isinstance(section, str) or not section.strip():
+            return
+        if label:
+            self._stable_sections.append(f"<!-- {label} -->\n{section.strip()}")
+        else:
+            self._stable_sections.append(section.strip())
 
     def add_volatile(self, section: str, label: str = "") -> None:
         """Add a volatile section (memory, timestamps, compression notes).
 
         These sections change frequently and go at the end.
         """
-        if section and section.strip():
-            if label:
-                self._volatile_sections.append(f"<!-- {label} -->\n{section.strip()}")
-            else:
-                self._volatile_sections.append(section.strip())
+        if not isinstance(section, str) or not section.strip():
+            return
+        if label:
+            self._volatile_sections.append(f"<!-- {label} -->\n{section.strip()}")
+        else:
+            self._volatile_sections.append(section.strip())
 
     def build(self) -> str:
         """Build the complete system prompt with stable-first ordering."""
