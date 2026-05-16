@@ -1,0 +1,132 @@
+# Hermes Agent — Local-Only Configuration with kiro-cli
+# =====================================================
+# This config optimizes Hermes Agent for local-only usage with kiro-cli
+# as the sole LLM backbone. No cloud calls, no API keys needed.
+#
+# Usage:
+#   cp kiro-local-config.yaml ~/.hermes/config.yaml
+#   hermes
+
+# ─── Provider Configuration ───────────────────────────────────────────────────
+
+provider: custom
+model: claude-sonnet-4.6
+
+# Point to the kiro-openai-wrapper running locally
+api_base: http://localhost:8000/v1
+api_key: local
+
+# Fallback: if wrapper is down, try direct kiro-cli subprocess
+# (requires the kiro-cli provider module to be loaded)
+fallback_model:
+  provider: custom
+  model: claude-opus-4.6
+  base_url: http://localhost:8000/v1
+  api_key: local
+
+# ─── Model Configuration ──────────────────────────────────────────────────────
+
+model:
+  # Context window for Claude via kiro-cli
+  context_length: 200000
+  # Max output tokens per response
+  max_tokens: 16000
+
+# ─── Agent Behavior ───────────────────────────────────────────────────────────
+
+agent:
+  # Reduce max iterations for local (faster feedback loops)
+  max_iterations: 45
+  # API retry count (local = fast retries)
+  api_max_retries: 2
+  # Tool use enforcement
+  tool_use_enforcement: auto
+
+# ─── Memory Configuration ─────────────────────────────────────────────────────
+
+memory:
+  memory_enabled: true
+  user_profile_enabled: true
+  # Nudge interval (turns between memory save reminders)
+  nudge_interval: 8
+  # Character limits for memory files
+  memory_char_limit: 3000
+  user_char_limit: 2000
+
+# ─── Compression Configuration ────────────────────────────────────────────────
+# Optimized for local models where every token counts
+
+compression:
+  enabled: true
+  # Trigger compression at 50% of context window
+  threshold: 0.50
+  # Target 20% of context after compression
+  target_ratio: 0.20
+  # Protect last N messages from compression
+  protect_last_n: 15
+  # Protect first N non-system messages
+  protect_first_n: 2
+  # Suppress status messages (cleaner output)
+  status_messages: false
+
+# ─── Microcompact (LLM-free context stripping) ────────────────────────────────
+# Applied every turn BEFORE the API call — zero cost, instant
+
+microcompact:
+  enabled: true
+  # Keep last N messages fully intact
+  protect_last_n: 6
+  # Truncate old tool results to this many chars (0 = remove entirely)
+  max_tool_result_chars: 300
+  # Strip <think>...</think> blocks from history
+  strip_thinking: true
+  # Remove trivial tool results ("ok", "done", etc.)
+  strip_empty_tool_results: true
+
+# ─── Skills Configuration ─────────────────────────────────────────────────────
+
+skills:
+  # Skill creation nudge interval
+  creation_nudge_interval: 12
+  # Don't inject full skills index (saves ~3.5k tokens per call)
+  inject_index: false
+
+# ─── Auxiliary Tasks ──────────────────────────────────────────────────────────
+# All auxiliary tasks use the same local model (no separate cheap model)
+
+auxiliary:
+  compression:
+    provider: custom
+    model: claude-sonnet-4.6
+    base_url: http://localhost:8000/v1
+    api_key: local
+    context_length: 200000
+  vision:
+    provider: custom
+    model: claude-sonnet-4.6
+    base_url: http://localhost:8000/v1
+    api_key: local
+
+# ─── Prompt Caching ───────────────────────────────────────────────────────────
+# Disabled for local (kiro-cli manages its own caching)
+
+prompt_caching:
+  enabled: false
+
+# ─── Security (Local-Only) ────────────────────────────────────────────────────
+
+security:
+  # Auto-approve all tool calls (trusted local environment)
+  auto_approve_all: true
+  # No command deny list (full local access)
+  command_deny_list: []
+
+# ─── Performance Optimizations ────────────────────────────────────────────────
+
+performance:
+  # Disable telemetry
+  telemetry: false
+  # Reduce tool delay (local = no rate limits)
+  tool_delay: 0.1
+  # Enable cache-stable mode for cron/automated tasks
+  cache_stable: false
