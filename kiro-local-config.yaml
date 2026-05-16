@@ -1,42 +1,32 @@
-# Hermes Agent — Local-Only Configuration with kiro-cli
-# =====================================================
-# This config optimizes Hermes Agent for local-only usage with kiro-cli
-# as the sole LLM backbone. No cloud calls, no API keys needed.
-#
-# Usage:
-#   cp kiro-local-config.yaml ~/.hermes/config.yaml
-#   hermes
-
-# ─── Provider Configuration ───────────────────────────────────────────────────
+# Hermes Agent — kiro-cli as Default Provider (claude-opus-4.6)
+# =============================================================
+# Uses kiro-cli (via OpenAI-compatible wrapper) as the sole LLM backbone.
+# Model: claude-opus-4.6 (best quality, 1M context)
+# TESTED AND WORKING: May 17, 2026
 
 provider: custom
-model: claude-sonnet-4.6
+model: claude-opus-4.6
 
-# Point to the kiro-openai-wrapper running locally
 api_base: http://localhost:8000/v1
 api_key: local
-
-# Fallback: if wrapper is down, try direct kiro-cli subprocess
-# (requires the kiro-cli provider module to be loaded)
-fallback_model:
-  provider: custom
-  model: claude-opus-4.6
-  base_url: http://localhost:8000/v1
-  api_key: local
 
 # ─── Model Configuration ──────────────────────────────────────────────────────
 
 model:
-  # Context window for Claude via kiro-cli (1M for sonnet/opus 4.6)
+  # Context window for Claude Opus 4.6 via kiro-cli (1M tokens!)
   context_length: 1000000
   # Max output tokens per response
   max_tokens: 32000
+  provider: custom
+  name: claude-opus-4.6
+  base_url: http://localhost:8000/v1
+  api_key: local
 
 # ─── Agent Behavior ───────────────────────────────────────────────────────────
 
 agent:
-  # Reduce max iterations for local (faster feedback loops)
-  max_iterations: 45
+  # Higher iterations for opus (it's thorough)
+  max_iterations: 60
   # API retry count (local = fast retries)
   api_max_retries: 2
   # Tool use enforcement
