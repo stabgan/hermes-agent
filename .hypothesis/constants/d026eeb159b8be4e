@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/utils.py
+# hypothesis_version: 6.151.5
+
+['.', '.tmp', '1', '://', 'ALL_PROXY', 'HTTPS_PROXY', 'HTTP_PROXY', 'all_proxy', 'http_proxy', 'https_proxy', 'int | None', 'on', 'r', 'rt', 'socks://', 'true', 'utf-8', 'w', 'yes']

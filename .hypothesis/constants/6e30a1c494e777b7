@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/tools/url_safety.py
+# hypothesis_version: 6.151.5
+
+['.', '0', '1', '100.100.100.200', '100.64.0.0/10', '169.254.0.0/16', '169.254.169.253', '169.254.169.254', '169.254.170.2', '<empty>', 'allow_private_urls', 'browser', 'false', 'fd00:ec2::254', 'http', 'https', 'metadata.goog', 'no', 'security', 'true', 'yes']

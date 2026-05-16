@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/model-providers/xiaomi/__init__.py
+# hypothesis_version: 6.151.5
+
+['XIAOMI_API_KEY', 'mimo', 'xiaomi', 'xiaomi-mimo']

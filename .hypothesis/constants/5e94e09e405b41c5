@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/tools/environments/ssh.py
+# hypothesis_version: 6.151.5
+
+[120, '-', '-C', '-O', '-P', '-c', '-chf', '-i', '-l', '-o', '-p', '.', '/', '/root', 'BatchMode=yes', 'ConnectTimeout=10', 'ControlMaster=auto', 'ControlPersist=300', 'bash', 'echo $HOME', 'exit', 'hermes-ssh', 'hermes-ssh-bulk-', 'root', 'scp', 'ssh', 'tar', 'wb', '~']

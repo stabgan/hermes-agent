@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/model-providers/kilocode/__init__.py
+# hypothesis_version: 6.151.5
+
+['KILOCODE_API_KEY', 'kilo', 'kilo-code', 'kilo-gateway', 'kilocode']

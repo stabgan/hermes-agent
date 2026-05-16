@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/spotify/__init__.py
+# hypothesis_version: 6.151.5
+
+['spotify', 'spotify_albums', 'spotify_devices', 'spotify_library', 'spotify_playback', 'spotify_playlists', 'spotify_queue', 'spotify_search', '❤️', '🎵', '💿', '📚', '📻', '🔈', '🔎']

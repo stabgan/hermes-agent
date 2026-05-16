@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/tools/computer_use/schema.py
+# hypothesis_version: 6.151.5
+
+['Scroll direction.', 'action', 'alt', 'amount', 'app', 'array', 'ax', 'boolean', 'button', 'capture', 'capture_after', 'click', 'cmd', 'computer_use', 'coordinate', 'ctrl', 'description', 'direction', 'double_click', 'down', 'drag', 'element', 'enum', 'fn', 'focus_app', 'from_coordinate', 'from_element', 'integer', 'items', 'key', 'keys', 'left', 'list_apps', 'maxItems', 'middle', 'middle_click', 'minItems', 'mode', 'modifiers', 'name', 'number', 'object', 'option', 'parameters', 'properties', 'raise_window', 'required', 'right', 'right_click', 'scroll', 'seconds', 'set_value', 'shift', 'som', 'string', 'text', 'to_coordinate', 'to_element', 'type', 'up', 'value', 'vision', 'wait']

@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/model-providers/nous/__init__.py
+# hypothesis_version: 6.151.5
+
+['NOUS_API_KEY', 'Nous Research', 'effort', 'enabled', 'hermes-3-405b', 'hermes-3-70b', 'medium', 'nous', 'nous-portal', 'nousresearch', 'oauth_device_code', 'reasoning', 'tags']

@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/hermes_constants.py
+# hypothesis_version: 6.151.5
+
+['.env', '.hermes', '/.dockerenv', '/lxc/', '/proc/1/cgroup', '/proc/version', '/run/.containerenv', 'HERMES_HOME', 'PREFIX', 'TERMUX_VERSION', '_hermes_ipv4_patched', 'active_profile', 'com.termux/files/usr', 'config.yaml', 'default', 'docker', 'effort', 'enabled', 'high', 'home', 'low', 'medium', 'microsoft', 'minimal', 'none', 'optional-skills', 'podman', 'profiles', 'r', 'skills', 'utf-8', 'xhigh', '~/']

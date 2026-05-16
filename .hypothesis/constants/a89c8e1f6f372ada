@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/agent/video_gen_provider.py
+# hypothesis_version: 6.151.5
+
+['%Y%m%d_%H%M%S', '1080p', '16:9', '1:1', '2:3', '3:2', '3:4', '480p', '4:3', '540p', '720p', '9:16', 'aspect_ratio', 'aspect_ratios', 'badge', 'cache', 'duration', 'env_vars', 'error', 'error_type', 'id', 'max_duration', 'max_reference_images', 'min_duration', 'modalities', 'modality', 'model', 'mp4', 'name', 'prompt', 'provider', 'provider_error', 'resolutions', 'success', 'supports_audio', 'tag', 'text', 'video', 'videos']

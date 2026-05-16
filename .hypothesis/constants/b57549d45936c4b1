@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/gateway/platforms/__init__.py
+# hypothesis_version: 6.151.5
+
+['BasePlatformAdapter', 'MessageEvent', 'QQAdapter', 'SendResult', 'YuanbaoAdapter']

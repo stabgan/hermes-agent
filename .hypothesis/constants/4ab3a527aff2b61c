@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/tools/registry.py
+# hypothesis_version: 6.151.5
+
+[30.0, '*.py', '__init__.py', 'available', 'check_fn', 'description', 'emoji', 'env_vars', 'error', 'function', 'handler', 'is_async', 'mcp-', 'mcp_tool.py', 'name', 'register', 'registry', 'registry.py', 'requirements', 'requires_env', 'schema', 'setup_url', 'tools', 'toolset', 'type', 'utf-8', '⚡']

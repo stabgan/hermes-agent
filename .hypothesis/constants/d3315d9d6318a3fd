@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/agent/web_search_registry.py
+# hypothesis_version: 6.151.5
+
+['.', 'backend', 'brave-free', 'crawl', 'crawl_backend', 'ddgs', 'exa', 'extract', 'extract_backend', 'firecrawl', 'parallel', 'search', 'search_backend', 'searxng', 'tavily', 'web']

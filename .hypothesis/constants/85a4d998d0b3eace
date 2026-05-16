@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/model-providers/deepseek/__init__.py
+# hypothesis_version: 6.151.5
+
+['DEEPSEEK_API_KEY', 'DeepSeek', 'deepseek', 'deepseek-chat', 'deepseek-reasoner', 'deepseek-v', 'deepseek-v3', 'disabled', 'effort', 'enabled', 'high', 'low', 'max', 'medium', 'reasoning_effort', 'thinking', 'type', 'xhigh']

@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/tools/x_search_tool.py
+# hypothesis_version: 6.151.5
+
+[1.5, 5.0, 180, 500, 100000, '/', '@', 'Authorization', 'Content-Type', 'User-Agent', 'XAI_API_KEY', 'allowed_x_handles', 'annotations', 'answer', 'api_key', 'application/json', 'array', 'base_url', 'boolean', 'citations', 'code', 'content', 'credential_source', 'default', 'description', 'end_index', 'error', 'error_type', 'excluded_x_handles', 'from_date', 'grok-4.20-reasoning', 'https://api.x.ai/v1', 'inline_citations', 'input', 'items', 'message', 'model', 'name', 'object', 'output', 'output_text', 'parameters', 'properties', 'provider', 'query', 'required', 'response', 'retries', 'role', 'start_index', 'status_code', 'store', 'string', 'success', 'text', 'timeout_seconds', 'title', 'to_date', 'tool', 'tools', 'type', 'url', 'url_citation', 'user', 'x_search', 'x_search failed: %s', 'xai', '🐦']

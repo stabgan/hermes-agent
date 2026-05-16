@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/tools/browser_providers/browser_use.py
+# hypothesis_version: 6.151.5
+
+[200, 201, 204, 409, 500, '/', 'BROWSER_USE_API_KEY', 'Browser Use', 'Content-Type', 'X-Idempotency-Key', 'action', 'already in progress', 'api_key', 'application/json', 'base_url', 'bb_session_id', 'browser', 'browser-use', 'browser_use', 'cdpUrl', 'cdp_url', 'connectUrl', 'error', 'external_call_id', 'features', 'id', 'managed_mode', 'message', 'proxyCountryCode', 'session_name', 'stop', 'timeout', 'us', 'x-external-call-id']

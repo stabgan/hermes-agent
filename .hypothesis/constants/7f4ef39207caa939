@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/tools/browser_providers/browserbase.py
+# hypothesis_version: 6.151.5
+
+[200, 201, 204, 402, ', ', '/', 'BROWSERBASE_API_KEY', 'BROWSERBASE_BASE_URL', 'BROWSERBASE_PROXIES', 'Browserbase', 'Content-Type', 'REQUEST_RELEASE', 'X-BB-API-Key', 'advancedStealth', 'advanced_stealth', 'api_key', 'application/json', 'base_url', 'basic_stealth', 'bb_session_id', 'browserSettings', 'cdp_url', 'connectUrl', 'custom_timeout', 'false', 'features', 'id', 'keepAlive', 'keep_alive', 'projectId', 'project_id', 'proxies', 'session_name', 'status', 'timeout', 'true']

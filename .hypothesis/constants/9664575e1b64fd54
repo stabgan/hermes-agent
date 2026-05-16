@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/web/parallel/provider.py
+# hypothesis_version: 6.151.5
+
+['Interrupted', 'PARALLEL_API_KEY', 'PARALLEL_SEARCH_MODE', 'Parallel', 'Parallel API key', '_parallel_client', 'agentic', 'badge', 'content', 'data', 'description', 'env_vars', 'error', 'extraction failed', 'fast', 'https://parallel.ai', 'key', 'metadata', 'name', 'one-shot', 'paid', 'parallel', 'position', 'prompt', 'raw_content', 'search.parallel', 'sourceURL', 'success', 'tag', 'title', 'url', 'web']

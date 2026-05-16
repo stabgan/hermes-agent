@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/tools/environments/modal.py
+# hypothesis_version: 6.151.5
+
+[120, 300, 600, 1024, 3600, '-c', '-l', '/', '/root', '/root/.hermes', 'ascii', 'bash', 'container_path', 'debian', 'default', 'direct', 'heredoc', 'hermes-agent', 'host_path', 'im-', 'infinity', 'modal_snapshots.json', 'mounts', 'replace', 'sleep', 'terminal.modal', 'timeout', 'ubuntu', 'utf-8', 'w:gz']

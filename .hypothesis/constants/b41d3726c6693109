@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/tools/environments/base.py
+# hypothesis_version: 6.151.5
+
+[0.1, 0.2, 10.0, 30.0, 120, 124, 130, 4096, ' (LOST during run)', '$HOME', "'", "'\\''", '/', '/tmp', 'MISSING', 'TERMINAL_SANDBOX_DIR', '__hermes_ec=$?', 'buffer', 'callback', 'exit $__hermes_ec', 'heredoc', 'interval', 'last_touch', 'nt', 'output', 'pid', 'pipe', 'r', 'replace', 'returncode', 'sandboxes', 'set', 'start', 'utf-8', '~', '~/']

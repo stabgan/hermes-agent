@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/tools/session_search_tool.py
+# hypothesis_version: 6.151.5
+
+[0.1, -250, 200, 250, 500, 10000, 100000, '\n...[truncated]...\n', '\n…[truncated]', ',', '-', '.', '?', 'ASSISTANT', 'TOOL', 'auxiliary', 'content', 'count', 'current_session_id', 'db', 'default', 'description', 'error', 'function', 'id', 'integer', 'last_active', 'limit', 'max_concurrency', 'message', 'message_count', 'mode', 'model', 'name', 'object', 'parameters', 'parent_session_id', 'preview', 'properties', 'query', 'recent', 'required', 'results', 'role', 'role_filter', 'session_id', 'session_search', 'session_started', 'sessions_searched', 'source', 'started_at', 'string', 'success', 'summary', 'system', 'title', 'tool', 'tool_calls', 'tool_name', 'type', 'unknown', 'user', 'when', '🔍']

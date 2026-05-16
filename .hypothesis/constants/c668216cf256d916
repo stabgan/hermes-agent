@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/model-providers/nvidia/__init__.py
+# hypothesis_version: 6.151.5
+
+[16384, 'NVIDIA NIM', 'NVIDIA_API_KEY', 'nvidia', 'nvidia-nim']

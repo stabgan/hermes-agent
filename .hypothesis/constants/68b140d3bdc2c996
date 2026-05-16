@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/providers/base.py
+# hypothesis_version: 6.151.5
+
+[8.0, '/', '/models', 'Accept', 'Authorization', 'User-Agent', 'api_key', 'application/json', 'chat_completions', 'data', 'fetch_models(%s): %s', 'hermes-cli', 'id']

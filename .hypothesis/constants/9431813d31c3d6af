@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/tools/xai_http.py
+# hypothesis_version: 6.151.5
+
+['/', 'XAI_API_KEY', 'XAI_BASE_URL', 'api_key', 'base_url', 'https://api.x.ai/v1', 'provider', 'unknown', 'xai', 'xai-oauth']

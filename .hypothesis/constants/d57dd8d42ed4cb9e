@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/model-providers/kimi-coding/__init__.py
+# hypothesis_version: 6.151.5
+
+[32000, 'KIMI_API_KEY', 'KIMI_CN_API_KEY', 'KIMI_CODING_API_KEY', 'User-Agent', 'disabled', 'effort', 'enabled', 'hermes-agent/1.0', 'high', 'kimi', 'kimi-cn', 'kimi-coding', 'kimi-coding-cn', 'kimi-for-coding', 'low', 'medium', 'moonshot', 'moonshot-cn', 'reasoning_effort', 'thinking', 'type']

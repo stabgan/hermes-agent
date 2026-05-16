@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/image_gen/openai/__init__.py
+# hypothesis_version: 6.151.5
+
+['1024x1024', '1024x1536', '1536x1024', 'Balanced — default', 'GPT Image 2 (High)', 'GPT Image 2 (Low)', 'GPT Image 2 (Medium)', 'OPENAI_API_KEY', 'OPENAI_IMAGE_MODEL', 'OpenAI', 'OpenAI API key', 'api_error', 'auth_required', 'b64_json', 'badge', 'data', 'display', 'empty_response', 'env_vars', 'gpt-image-2', 'gpt-image-2-high', 'gpt-image-2-low', 'gpt-image-2-medium', 'high', 'id', 'image_gen', 'invalid_argument', 'io_error', 'key', 'landscape', 'low', 'medium', 'missing_dependency', 'model', 'n', 'name', 'openai', 'paid', 'portrait', 'price', 'prompt', 'quality', 'revised_prompt', 'size', 'speed', 'square', 'strengths', 'tag', 'url', 'varies', '~15s', '~2min', '~40s']

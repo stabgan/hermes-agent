@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/web/brave_free/provider.py
+# hypothesis_version: 6.151.5
+
+['Accept', 'BRAVE_SEARCH_API_KEY', 'Brave Search (Free)', 'X-Subscription-Token', 'application/json', 'badge', 'brave-free', 'count', 'data', 'description', 'env_vars', 'error', 'free', 'key', 'name', 'position', 'prompt', 'q', 'results', 'success', 'tag', 'title', 'url', 'web']

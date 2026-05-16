@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/agent/microcompact.py
+# hypothesis_version: 6.151.5
+
+[200, 500, '<think>.*?</think>', '[completed]', 'arguments', 'assistant', 'content', 'done', 'function', 'name', 'none', 'null', 'ok', 'removable_messages', 'role', 'success', 'system', 'text', 'thinking_chars', 'tool', 'tool_calls', 'tool_result', 'tool_result_chars', 'total_chars', 'type', '{}']

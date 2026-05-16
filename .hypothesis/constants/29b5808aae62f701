@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/image_gen/xai/__init__.py
+# hypothesis_version: 6.151.5
+
+[120, 300, '/', '16:9', '1:1', '1k', '2:3', '2k', '3:2', '3:4', '4:3', '9:16', 'Authorization', 'Content-Type', 'Fast, high-quality', 'Grok Imagine Image', 'User-Agent', 'XAI_IMAGE_MODEL', 'api_error', 'api_key', 'application/json', 'aspect_ratio', 'b64_json', 'badge', 'base_url', 'connection_error', 'data', 'display', 'empty_response', 'env_vars', 'error', 'grok-imagine-image', 'https://api.x.ai/v1', 'id', 'image_gen', 'invalid_response', 'io_error', 'landscape', 'message', 'missing_api_key', 'model', 'name', 'paid', 'portrait', 'post_setup', 'prompt', 'provider', 'resolution', 'speed', 'square', 'strengths', 'tag', 'timeout', 'url', 'xAI (Grok)', 'xai', 'xai_grok', '~10-20s', '~5-10s']

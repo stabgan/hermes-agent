@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/gateway/platforms/helpers.py
+# hypothesis_version: 6.151.5
+
+[0.6, 2.0, 300, 500, 2000, 4000, '****', '<none>', 'MessageEvent', '\\*(.+?)\\*', '\\*\\*(.+?)\\*\\*', '\\1', '\\n{3,}', '^#{1,6}\\s+', '_(.+?)_', '__(.+?)__', '_last_chunk_len', '`(.+?)`', 'utf-8']

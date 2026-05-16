@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/model-providers/qwen-oauth/__init__.py
+# hypothesis_version: 6.151.5
+
+[65536, 'QWEN_API_KEY', 'cache_control', 'content', 'ephemeral', 'metadata', 'oauth_external', 'qwen', 'qwen-cli', 'qwen-oauth', 'qwen-portal', 'role', 'system', 'text', 'type']

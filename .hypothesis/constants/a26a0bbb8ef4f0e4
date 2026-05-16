@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/tools/environments/docker.py
+# hypothesis_version: 6.151.5
+
+[120, '--cap-add', '--cap-drop', '--cpus', '--format', '--init', '--memory', '--name', '--network=none', '--pids-limit', '--security-opt', '--storage-opt', '--tmpfs', '--user', '-c', '-d', '-e', '-i', '-l', '-v', '-w', '/root', '256', ':', ':/workspace', 'ALL', 'CHOWN', 'DAC_OVERRIDE', 'FOWNER', 'HERMES_DOCKER_BINARY', 'SETGID', 'SETUID', 'bash', 'container_path', 'create', 'darwin', 'default', 'docker', 'exec', 'getgid', 'getuid', 'hello-world', 'home', 'host_path', 'infinity', 'info', 'no-new-privileges', 'overlay2', 'podman', 'rm', 'run', 'size=1m', 'sleep', 'version', 'workspace', '{{.Driver}}', '~']

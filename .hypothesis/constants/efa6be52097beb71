@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/tools/environments/singularity.py
+# hypothesis_version: 6.151.5
+
+[120, 200, 500, 600, '  Error: %s', '  Source: %s', '  Target: %s', '-', '--bind', '--containall', '--cpus', '--memory', '--no-home', '--overlay', '--writable-tmpfs', '-c', '-l', '.apptainer', '.sif', '/', '/scratch', ':', 'APPTAINER_CACHEDIR', 'APPTAINER_TMPDIR', 'TERMINAL_SCRATCH_DIR', 'USER', 'apptainer', 'bash', 'build', 'default', 'docker://', 'exec', 'hermes', 'hermes-agent', 'hermes-overlays', 'instance', 'singularity', 'start', 'stop', 'tmp', 'version', '~']

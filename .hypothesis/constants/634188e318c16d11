@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/tools/environments/file_sync.py
+# hypothesis_version: 6.151.5
+
+[0.0, 5.0, 1024, 65536, '.sync.lock', '.tar', '/', '/root/.hermes', 'container_path', 'data', 'hermes-sync-back-', 'host_path', 'mkdir -p ', 'rb', 'rm -f ', 'utf-8', 'w']

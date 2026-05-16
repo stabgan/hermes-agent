@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/web/firecrawl/provider.py
+# hypothesis_version: 6.151.5
+
+['/', 'FIRECRAWL_API_KEY', 'FIRECRAWL_API_URL', 'Firecrawl', 'Interrupted', 'Unknown URL', '_', '__dict__', '_firecrawl_client', 'api_key', 'api_url', 'badge', 'blocked_by_policy', 'content', 'data', 'direct', 'env_vars', 'error', 'firecrawl', 'format', 'formats', 'host', 'html', 'instructions', 'key', 'limit', 'markdown', 'message', 'metadata', 'model_dump', 'name', 'prompt', 'raw_content', 'results', 'rule', 'scrape_options', 'search.firecrawl', 'source', 'sourceURL', 'status', 'success', 'tag', 'title', 'tool-gateway', 'unknown', 'url', 'web']

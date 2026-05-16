@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/model-providers/ai-gateway/__init__.py
+# hypothesis_version: 6.151.5
+
+['AI_GATEWAY_API_KEY', 'HTTP-Referer', 'Hermes Agent', 'X-Title', 'ai-gateway', 'ai_gateway', 'aigateway', 'effort', 'enabled', 'medium', 'reasoning', 'vercel', 'vercel-ai-gateway']

@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/agent/redact.py
+# hypothesis_version: 6.151.5
+
+['%', '&', '(?<![A-Za-z0-9_-])(', ')(?![A-Za-z0-9_-])', '***', '****', '1', '<@!?(\\d{17,20})>', '=', 'AKIA[A-Z0-9]{16}', 'access_token', 'api_key', 'apikey', 'auth', 'authorization', 'brv_[A-Za-z0-9]{10,}', 'client_secret', 'code', 'exa_[A-Za-z0-9]{10,}', 'fc-[A-Za-z0-9]{10,}', 'gho_[A-Za-z0-9]{10,}', 'ghp_[A-Za-z0-9]{10,}', 'ghr_[A-Za-z0-9]{10,}', 'ghs_[A-Za-z0-9]{10,}', 'ghu_[A-Za-z0-9]{10,}', 'gsk_[A-Za-z0-9]{10,}', 'hf_[A-Za-z0-9]{10,}', 'hsk-[A-Za-z0-9]{10,}', 'id_token', 'jwt', 'key', 'npm_[A-Za-z0-9]{10,}', 'on', 'password', 'private_key', 'r8_[A-Za-z0-9]{10,}', 'refresh_token', 'secret', 'session', 'signature', 'sk_[A-Za-z0-9_]{10,}', 'syt_[A-Za-z0-9]{10,}', 'token', 'true', 'x-amz-signature', 'yes', '|']

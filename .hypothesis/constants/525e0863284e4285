@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/tools/browser_providers/firecrawl.py
+# hypothesis_version: 6.151.5
+
+[200, 201, 204, '300', 'Authorization', 'Content-Type', 'FIRECRAWL_API_KEY', 'FIRECRAWL_API_URL', 'Firecrawl', 'application/json', 'bb_session_id', 'cdpUrl', 'cdp_url', 'features', 'firecrawl', 'id', 'session_name', 'ttl']

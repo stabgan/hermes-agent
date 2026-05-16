@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/tools/memory_tool.py
+# hypothesis_version: 6.151.5
+
+[100, 1375, 2200, '\n§\n', '...', '.lock', '.mem_', '.tmp', 'Entry added.', 'Entry removed.', 'Entry replaced.', 'MEMORY.md', 'USER.md', 'a+', 'action', 'add', 'authorized_keys', 'bypass_restrictions', 'content', 'current_entries', 'deception_hide', 'description', 'disregard_rules', 'entries', 'entry_count', 'enum', 'error', 'exfil_curl', 'exfil_wget', 'hermes_env', 'matches', 'memories', 'memory', 'message', 'name', 'object', 'old_text', 'parameters', 'prompt_injection', 'properties', 'read_secrets', 'remove', 'replace', 'required', 'role_hijack', 'ssh_access', 'ssh_backdoor', 'store', 'string', 'success', 'sys_prompt_override', 'target', 'type', 'usage', 'user', 'utf-8', 'w', 'you\\s+are\\s+now\\s+', '\u200b', '\u200c', '\u200d', '\u202a', '\u202b', '\u202c', '\u202d', '\u202e', '\u2060', '═', '\ufeff', '🧠']

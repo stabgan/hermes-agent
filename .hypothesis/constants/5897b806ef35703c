@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/model-providers/huggingface/__init__.py
+# hypothesis_version: 6.151.5
+
+['HF_TOKEN', 'HuggingFace', 'hf', 'hugging-face', 'huggingface', 'huggingface-hub']

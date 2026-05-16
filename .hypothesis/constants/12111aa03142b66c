@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/tools/skill_manager_tool.py
+# hypothesis_version: 6.151.5
+
+[500, 1024, 100000, 1048576, '*', ', ', '---', '...', '/', 'SKILL.md', '\\', '\\n---\\s*\\n', 'absorbed_into', 'action', 'agent-created', 'assets', 'available_files', 'boolean', 'category', 'content', 'create', 'delete', 'description', 'edit', 'enum', 'error', 'file_content', 'file_path', 'file_preview', 'guard_agent_created', 'hint', 'message', 'name', 'new_string', 'object', 'old_string', 'parameters', 'patch', 'path', 'pinned', 'properties', 'references', 'remove_file', 'replace_all', 'required', 'scripts', 'skill_manage', 'skill_md', 'skills', 'string', 'success', 'templates', 'type', 'utf-8', 'w', 'write_file', '📝']

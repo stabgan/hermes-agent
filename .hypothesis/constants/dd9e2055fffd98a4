@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/web/searxng/provider.py
+# hypothesis_version: 6.151.5
+
+['/', 'Accept', 'SEARXNG_URL', 'SearXNG', 'application/json', 'badge', 'content', 'data', 'description', 'env_vars', 'error', 'format', 'free · self-hosted', 'https://searx.space/', 'json', 'key', 'name', 'pageno', 'position', 'prompt', 'q', 'results', 'score', 'searxng', 'success', 'tag', 'title', 'url', 'web']

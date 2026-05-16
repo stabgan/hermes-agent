@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/web/tavily/provider.py
+# hypothesis_version: 6.151.5
+
+['/', 'Authorization', 'Interrupted', 'TAVILY_API_KEY', 'TAVILY_BASE_URL', 'Tavily', 'Tavily API key', 'api_key', 'badge', 'basic', 'content', 'crawl', 'data', 'depth', 'description', 'env_vars', 'error', 'extract', 'extract_depth', 'extraction failed', 'failed_results', 'failed_urls', 'include_images', 'include_raw_content', 'instructions', 'key', 'limit', 'max_results', 'metadata', 'name', 'paid', 'position', 'prompt', 'query', 'raw_content', 'results', 'search', 'sourceURL', 'success', 'tag', 'tavily', 'title', 'url', 'urls', 'web']

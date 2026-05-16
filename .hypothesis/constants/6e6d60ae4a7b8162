@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/model-providers/copilot-acp/__init__.py
+# hypothesis_version: 6.151.5
+
+[8.0, 'acp://copilot', 'chat_completions', 'copilot-acp', 'copilot-acp-agent', 'external_process', 'github-copilot-acp']

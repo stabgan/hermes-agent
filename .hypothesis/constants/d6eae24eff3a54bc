@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/tools/binary_extensions.py
+# hypothesis_version: 6.151.5
+
+['.', '.3ds', '.7z', '.a', '.aac', '.ai', '.aiff', '.app', '.avi', '.bin', '.blend', '.bmp', '.bz2', '.class', '.dat', '.data', '.db', '.deb', '.dll', '.doc', '.docx', '.dylib', '.ear', '.eot', '.eps', '.exe', '.fig', '.fla', '.flac', '.flv', '.gif', '.gz', '.ico', '.idx', '.iso', '.jar', '.jpeg', '.jpg', '.lib', '.lockb', '.m4a', '.m4v', '.max', '.mdb', '.mkv', '.mov', '.mp3', '.mp4', '.mpeg', '.mpg', '.msi', '.node', '.o', '.obj', '.odp', '.ods', '.odt', '.ogg', '.opus', '.otf', '.png', '.ppt', '.pptx', '.psd', '.pyc', '.pyo', '.rar', '.rlib', '.rpm', '.sketch', '.so', '.sqlite', '.sqlite3', '.swf', '.tar', '.tgz', '.tif', '.tiff', '.ttf', '.war', '.wasm', '.wav', '.webm', '.webp', '.wma', '.wmv', '.woff', '.woff2', '.xd', '.xls', '.xlsx', '.xz', '.z', '.zip']

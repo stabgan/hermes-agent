@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/gateway/whatsapp_identity.py
+# hypothesis_version: 6.151.5
+
+['+', ':', '@', '^[A-Za-z0-9@.+\\-]+$', '_reverse', 'session', 'utf-8', 'whatsapp']

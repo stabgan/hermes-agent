@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/gateway/delivery.py
+# hypothesis_version: 6.151.5
+
+[3800, 4000, '# Delivery Output', '%Y%m%d_%H%M%S', '---', ':', 'DeliveryTarget', 'cron', 'error', 'job_id', 'local', 'misc', 'origin', 'output', 'path', 'result', 'success', 'thread_id', 'timestamp', 'unknown']

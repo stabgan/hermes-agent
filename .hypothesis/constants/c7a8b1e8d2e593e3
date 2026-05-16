@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/model-providers/novita/__init__.py
+# hypothesis_version: 6.151.5
+
+['NOVITA_API_KEY', 'NOVITA_BASE_URL', 'NovitaAI', 'api_key', 'minimax/minimax-m2.7', 'moonshotai/kimi-k2.5', 'novita', 'novita-ai', 'novitaai', 'zai-org/glm-5']

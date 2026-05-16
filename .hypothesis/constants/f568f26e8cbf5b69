@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/tools/feishu_doc_tool.py
+# hypothesis_version: 6.151.5
+
+['client', 'code', 'content', 'data', 'description', 'doc_token', 'document_id', 'feishu_doc', 'feishu_doc_read', 'lark_oapi', 'msg', 'name', 'object', 'parameters', 'properties', 'raw', 'required', 'string', 'type', 'unknown error', '📄']

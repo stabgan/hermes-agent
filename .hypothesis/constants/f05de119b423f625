@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/model-providers/zai/__init__.py
+# hypothesis_version: 6.151.5
+
+['GLM_API_KEY', 'Z.AI (GLM)', 'ZAI_API_KEY', 'Z_AI_API_KEY', 'glm', 'glm-4-9b', 'glm-4.5-flash', 'glm-5', 'https://z.ai/', 'z-ai', 'z.ai', 'zai', 'zhipu']

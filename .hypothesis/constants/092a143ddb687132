@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/tools/website_policy.py
+# hypothesis_version: 6.151.5
+
+[0.0, 30.0, '#', '*.', '.', '/', '://', '__default__', 'config', 'config.yaml', 'domains', 'enabled', 'host', 'message', 'pattern', 'rule', 'rules', 'security', 'shared_files', 'source', 'url', 'utf-8', 'website_blocklist', 'www.']

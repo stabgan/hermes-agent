@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/tools/tool_backend_helpers.py
+# hypothesis_version: 6.151.5
+
+['.modal.toml', 'FAL_KEY', 'MODAL_TOKEN_ID', 'MODAL_TOKEN_SECRET', 'OPENAI_API_KEY', 'auto', 'direct', 'has_direct', 'local', 'logged_in', 'managed', 'managed_mode_blocked', 'managed_ready', 'mode', 'requested_mode', 'selected_backend', 'use_gateway']

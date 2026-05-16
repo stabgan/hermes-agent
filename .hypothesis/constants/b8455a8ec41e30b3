@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/hermes_cli/colors.py
+# hypothesis_version: 6.151.5
+
+['\x1b[0m', '\x1b[1m', '\x1b[2m', '\x1b[31m', '\x1b[32m', '\x1b[33m', '\x1b[34m', '\x1b[35m', '\x1b[36m', 'NO_COLOR', 'TERM', 'dumb']

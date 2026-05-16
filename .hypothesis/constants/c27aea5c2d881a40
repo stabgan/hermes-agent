@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/web/ddgs/provider.py
+# hypothesis_version: 6.151.5
+
+['DuckDuckGo (ddgs)', 'badge', 'body', 'data', 'ddgs', 'description', 'env_vars', 'error', 'href', 'name', 'position', 'post_setup', 'success', 'tag', 'title', 'url', 'web']

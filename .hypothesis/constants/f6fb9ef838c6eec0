@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/tools/mixture_of_agents_tool.py
+# hypothesis_version: 6.151.5
+
+[0.4, 0.6, 100, 200, 32000, '\nBasic usage:', '\nBest use cases:', '\nDebug mode:', '      )', '      print(result)', '  async def main():', '  import asyncio', '%s', ', ', '...', '=', 'Failed models: %s', 'MOA_TOOLS_DEBUG', 'OPENROUTER_API_KEY', 'Query: %s', 'Retrying in %ss...', '__main__', 'aggregator_model', 'content', 'description', 'effort', 'enabled', 'error', 'extra_body', 'failed_models', 'failed_models_count', 'failure_tolerance', 'gpt-', 'invalid', 'limit', 'max_tokens', 'messages', 'mixture_of_agents', 'moa', 'moa_tools', 'model', 'models_used', 'name', 'object', 'openai/gpt-5.4-pro', 'parameters', 'properties', 'rate', 'reasoning', 'reference_models', 'required', 'response', 'role', 'string', 'success', 'system', 'temperature', 'type', 'user', 'user_prompt', 'xhigh', '🧠']

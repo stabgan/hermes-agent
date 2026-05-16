@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/model-providers/copilot/__init__.py
+# hypothesis_version: 6.151.5
+
+['COPILOT_GITHUB_TOKEN', 'GH_TOKEN', 'GITHUB_TOKEN', 'copilot', 'effort', 'github', 'github-copilot', 'github-model', 'github-models', 'high', 'medium', 'reasoning', 'xhigh']

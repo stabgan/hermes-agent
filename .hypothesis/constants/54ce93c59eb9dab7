@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/model-providers/alibaba-coding-plan/__init__.py
+# hypothesis_version: 6.151.5
+
+['DASHSCOPE_API_KEY', 'alibaba-coding', 'alibaba-coding-plan', 'alibaba_coding', 'api_key', 'dashscope-coding']

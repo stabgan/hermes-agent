@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/model-providers/azure-foundry/__init__.py
+# hypothesis_version: 6.151.5
+
+['Azure Foundry', 'api_key', 'azure', 'azure-ai', 'azure-ai-foundry', 'azure-foundry']

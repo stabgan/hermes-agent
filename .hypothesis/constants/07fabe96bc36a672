@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/model-providers/minimax/__init__.py
+# hypothesis_version: 6.151.5
+
+['MINIMAX_API_KEY', 'MINIMAX_CN_API_KEY', 'MiniMax (OAuth)', 'MiniMax-M2.7', 'anthropic_messages', 'api_key', 'mini-max', 'minimax', 'minimax-china', 'minimax-cn', 'minimax-oauth', 'minimax-oauth-io', 'minimax_cn', 'minimax_oauth', 'oauth_external']

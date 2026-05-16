@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/tools/credential_files.py
+# hypothesis_version: 6.151.5
+
+['*', '/root/.hermes', 'TERMINAL_ENV', '_registered_files', 'audio_cache', 'browser_screenshots', 'cache/audio', 'cache/documents', 'cache/images', 'cache/screenshots', 'container_path', 'credential_files', 'docker', 'document_cache', 'hermes-skills-safe-', 'host_path', 'image_cache', 'local', 'name', 'path', 'skills', 'terminal']

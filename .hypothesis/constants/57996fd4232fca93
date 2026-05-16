@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/agent/image_gen_provider.py
+# hypothesis_version: 6.151.5
+
+['%Y%m%d_%H%M%S', 'aspect_ratio', 'badge', 'cache', 'env_vars', 'error', 'error_type', 'id', 'image', 'images', 'landscape', 'model', 'name', 'png', 'portrait', 'prompt', 'provider', 'provider_error', 'square', 'success', 'tag']

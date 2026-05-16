@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/model-providers/stepfun/__init__.py
+# hypothesis_version: 6.151.5
+
+['STEPFUN_API_KEY', 'step', 'step-3.5-flash', 'stepfun', 'stepfun-coding-plan']

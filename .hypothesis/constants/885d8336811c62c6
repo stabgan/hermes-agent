@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/model-providers/gemini/__init__.py
+# hypothesis_version: 6.151.5
+
+['GEMINI_API_KEY', 'GOOGLE_API_KEY', 'api_key', 'base_url', 'chat_completions', 'extra_body', 'gemini', 'gemini-cli', 'gemini-oauth', 'google', 'google-ai-studio', 'google-gemini', 'google-gemini-cli', 'model', 'oauth_external', 'reasoning_config', 'thinking_config']

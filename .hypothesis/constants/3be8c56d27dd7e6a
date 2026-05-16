@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/model-providers/anthropic/__init__.py
+# hypothesis_version: 6.151.5
+
+[8.0, '2023-06-01', 'ANTHROPIC_API_KEY', 'ANTHROPIC_TOKEN', 'Accept', 'anthropic', 'anthropic-version', 'anthropic_messages', 'api_key', 'application/json', 'claude', 'claude-code', 'claude-oauth', 'data', 'id', 'x-api-key']

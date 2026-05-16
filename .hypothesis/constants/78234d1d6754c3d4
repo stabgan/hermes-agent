@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/agent/memory_blocks.py
+# hypothesis_version: 6.151.5
+
+[0.0, 100, 1500, 2000, 2500, 3000, '.hermes', 'HERMES_HOME', 'MEMORY.md', 'SOUL.md', 'USER.md', 'block', 'chars', 'description', 'error', 'human', 'in_context', 'label', 'max', 'max_chars', 'memory_blocks', 'persona', 'project', 'scratchpad', 'success', 'usage_pct', 'utf-8']

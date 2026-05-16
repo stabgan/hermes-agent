@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/model-providers/openai-codex/__init__.py
+# hypothesis_version: 6.151.5
+
+['codex', 'codex_responses', 'oauth_external', 'openai-codex', 'openai_codex']

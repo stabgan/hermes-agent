@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/agent/file_safety.py
+# hypothesis_version: 6.151.5
+
+['.aws', '.azure', '.bash_profile', '.bashrc', '.config', '.docker', '.env', '.gnupg', '.hub', '.kube', '.netrc', '.npmrc', '.pgpass', '.profile', '.pypirc', '.ssh', '.zprofile', '.zshrc', '/etc/passwd', '/etc/shadow', '/etc/sudoers', '/etc/sudoers.d', '/etc/systemd', 'authorized_keys', 'config', 'gh', 'id_ed25519', 'id_rsa', 'index-cache', 'skills', '~', '~/.hermes']

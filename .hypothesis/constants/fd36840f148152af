@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/tools/env_passthrough.py
+# hypothesis_version: 6.151.5
+
+['_allowed_env_vars', 'env_passthrough', 'terminal']

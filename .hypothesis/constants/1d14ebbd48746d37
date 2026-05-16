@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/model-providers/bedrock/__init__.py
+# hypothesis_version: 6.151.5
+
+[8.0, 'amazon', 'amazon-bedrock', 'aws', 'aws-bedrock', 'aws_sdk', 'bedrock', 'bedrock_converse']

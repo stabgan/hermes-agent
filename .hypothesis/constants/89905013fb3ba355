@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/tools/environments/managed_modal.py
+# hypothesis_version: 6.151.5
+
+[1.0, 5.0, 10.0, 124, 400, 404, 1000, 5120, 300000, 3600000, '/', '/root', '/v1/sandboxes', 'Authorization', 'Content-Type', 'GET', 'POST', '_sandbox_id', 'application/json', 'cancelled', 'code', 'command', 'completed', 'cpu', 'cwd', 'default', 'diskMiB', 'ephemeral_disk', 'error', 'execId', 'failed', 'id', 'idleTimeoutMs', 'image', 'logicalKey', 'memory', 'memoryMiB', 'message', 'modal', 'output', 'persistentFilesystem', 'returncode', 'status', 'stdinData', 'timeout', 'timeoutMs', 'x-idempotency-key']

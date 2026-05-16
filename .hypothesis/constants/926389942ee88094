@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/model-providers/opencode-zen/__init__.py
+# hypothesis_version: 6.151.5
+
+['OPENCODE_GO_API_KEY', 'OPENCODE_ZEN_API_KEY', 'gemini-3-flash', 'glm-5', 'go', 'opencode', 'opencode-go', 'opencode-go-sub', 'opencode-zen', 'opencode_go', 'opencode_zen', 'zen']

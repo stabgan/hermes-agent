@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/tools/browser_cdp_tool.py
+# hypothesis_version: 6.151.5
+
+[1.0, 30.0, 300.0, 'additionalProperties', 'browser-cdp', 'browser_cdp', 'children', 'default', 'description', 'error', 'flatten', 'frame_id', 'id', 'method', 'name', 'number', 'object', 'parameters', 'params', 'properties', 'required', 'result', 'sessionId', 'session_id', 'string', 'success', 'targetId', 'target_id', 'task_id', 'timeout', 'top', 'type', 'ws://', 'wss://', '🧪']

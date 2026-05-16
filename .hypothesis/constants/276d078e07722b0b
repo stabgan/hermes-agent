@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/tools/video_generation_tool.py
+# hypothesis_version: 6.151.5
+
+['0', '1', '?', 'array', 'aspect_ratio', 'aspect_ratios', 'audio', 'boolean', 'default', 'description', 'duration', 'enum', 'false', 'id', 'image', 'image_url', 'integer', 'items', 'max_duration', 'max_reference_images', 'min_duration', 'modalities', 'modality', 'model', 'name', 'negative_prompt', 'no', 'object', 'off', 'on', 'parameters', 'prompt', 'properties', 'provider', 'provider_contract', 'provider_exception', 'reference_image_urls', 'required', 'resolution', 'resolutions', 'seed', 'string', 'supports_audio', 'text', 'true', 'type', 'video_gen', 'video_generate', 'yes', '🎬']

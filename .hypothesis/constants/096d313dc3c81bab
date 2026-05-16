@@ -1,0 +1,4 @@
+# file: /Users/kagangul2501/Development/hermes/hermes-agent/plugins/model-providers/xai/__init__.py
+# hypothesis_version: 6.151.5
+
+['XAI_API_KEY', 'api_key', 'codex_responses', 'grok', 'https://api.x.ai/v1', 'x-ai', 'x.ai', 'xai']
