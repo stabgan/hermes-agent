@@ -475,7 +475,9 @@ class TestMocks:
         client.agent_name = None
         cmd = client._build_command()
         assert "claude-sonnet-4.6" in cmd
-        assert "evil-model" not in cmd
+        # Verify the malicious model string is not present in any command element
+        assert "evil-model; rm -rf /" not in cmd
+        assert not any("evil-model" in arg for arg in cmd)
 
     def test_kiro_cli_build_command_with_agent(self, fake_kiro_binary):
         """Agent name should be included in command."""
@@ -1047,33 +1049,39 @@ class TestRegression:
 
         This is model output, not kiro-cli metadata.
         """
+        # These lines look similar to metadata patterns but are actual model output.
+        # They should be preserved when they appear as "> " prefixed content.
         lines_to_preserve = [
             "Running the tests showed 3 failures.",
-            "Searching for the bug in the codebase...",
-            "Looking up the documentation for this API...",
-            "Reading file: here is what I found",
-            "Executing the plan step by step:",
-            "No symbols found that match your query.",
-            "Completed in record time, here are results:",
+            "I'll execute the plan step by step:",
         ]
 
-        # These should NOT be treated as metadata when they're model output
-        # The _is_metadata_line function checks lines that START with these patterns
-        # Model output typically has more context
-        for line in lines_to_preserve:
-            # When embedded in a response with "> " prefix stripped, these
-            # are model output. The key is _is_metadata_line checks the stripped line.
-            # Some of these WILL match because they start with the pattern.
-            # The important thing is _clean_kiro_output handles the "> " prefix correctly.
-            pass
+        # These lines DO match metadata patterns and WILL be stripped.
+        # This is correct behavior — they are kiro-cli metadata, not model output.
+        lines_that_are_metadata = [
+            "Searching for files...",
+            "Looking up documentation",
+            "Reading file: /tmp/x.py",
+            "No symbols found in scope",
+            "Completed in 2.3s",
+            "Running tool read_file",
+        ]
 
-        # The critical test: content after "> " prefix removal should be preserved
-        # if it's actual model output (not spinner/timing metadata)
+        for line in lines_to_preserve:
+            raw = f"> {line}"
+            result = _clean_kiro_output(raw)
+            assert line in result, f"Model output '{line}' was incorrectly stripped"
+
+        for line in lines_that_are_metadata:
+            raw = f"> {line}"
+            result = _clean_kiro_output(raw)
+            assert line not in result, f"Metadata '{line}' was incorrectly preserved"
+
+        # Multi-line test: content after "> " prefix removal should be preserved
         raw = "> Running the tests showed 3 failures.\n> Here are the details:"
         result = _clean_kiro_output(raw)
-        # "Running the tests showed" doesn't match any metadata pattern
-        # (metadata patterns are "Running tool " not "Running the tests")
         assert "Running the tests showed" in result
+        assert "Here are the details" in result
 
     def test_path_traversal_blocked_in_memory_blocks(self, tmp_path):
         """Path traversal attempts should be blocked."""
@@ -1376,8 +1384,11 @@ class TestParametrized:
         ]
         result = microcompact_messages(messages, protect_last_n=5)
         tool_msgs = [m for m in result if m.get("role") == "tool"]
-        if tool_msgs and expected_trivial:
+        assert tool_msgs, "Tool message should always be preserved for protocol compliance"
+        if expected_trivial:
             assert tool_msgs[0]["content"] == "[completed]"
+        else:
+            assert tool_msgs[0]["content"] != "[completed]"
 
     @pytest.mark.parametrize("label", ["persona", "human", "project", "scratchpad"])
     def test_memory_block_defaults(self, label, memory_store):
@@ -1634,13 +1645,15 @@ class TestRoleProfileDetails:
             toolset="safe",
             max_iterations=20,
         )
-        register_role(custom)
-        assert get_role_profile("security_auditor") is not None
-        assert "security_auditor" in AVAILABLE_ROLES
-
-        # Cleanup
-        del ROLE_PROFILES["security_auditor"]
-        AVAILABLE_ROLES.remove("security_auditor")
+        try:
+            register_role(custom)
+            assert get_role_profile("security_auditor") is not None
+            assert "security_auditor" in AVAILABLE_ROLES
+        finally:
+            # Cleanup — always restore global state even if assertions fail
+            ROLE_PROFILES.pop("security_auditor", None)
+            if "security_auditor" in AVAILABLE_ROLES:
+                AVAILABLE_ROLES.remove("security_auditor")
 
     def test_list_roles_returns_all(self):
         """list_roles should return all registered roles."""
