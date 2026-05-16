@@ -27,10 +27,10 @@ fallback_model:
 # ─── Model Configuration ──────────────────────────────────────────────────────
 
 model:
-  # Context window for Claude via kiro-cli
-  context_length: 200000
+  # Context window for Claude via kiro-cli (1M for sonnet/opus 4.6)
+  context_length: 1000000
   # Max output tokens per response
-  max_tokens: 16000
+  max_tokens: 32000
 
 # ─── Agent Behavior ───────────────────────────────────────────────────────────
 
@@ -106,6 +106,25 @@ auxiliary:
     model: claude-sonnet-4.6
     base_url: http://localhost:8000/v1
     api_key: local
+
+# ─── MCP Strategy ─────────────────────────────────────────────────────────────
+# kiro-cli already has MCP servers configured (Context7, arxiv, playwright,
+# steelmind, tavily). These are available to the model during inference
+# automatically — no duplicate config needed here.
+#
+# Only add servers to Hermes's MCP config if they need:
+#   1. Persistent state across turns (knowledge graph, memory)
+#   2. Deep integration with Hermes's tool hooks/interception
+#   3. Custom result formatting for the skill/trajectory pipeline
+#
+# For stateless lookup servers (docs, search, web), let kiro-cli handle them.
+
+# Uncomment to add Hermes-managed MCP servers (persistent connections):
+# mcp_servers:
+#   memory-graph:
+#     command: npx
+#     args: ["-y", "@modelcontextprotocol/server-memory@latest"]
+#     env: {}
 
 # ─── Prompt Caching ───────────────────────────────────────────────────────────
 # Disabled for local (kiro-cli manages its own caching)
