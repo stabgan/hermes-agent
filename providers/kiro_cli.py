@@ -38,23 +38,51 @@ logger = logging.getLogger(__name__)
 KIRO_CLI_DEFAULT_PATH = os.path.expanduser("~/.local/bin/kiro-cli")
 
 KIRO_MODELS = [
+    "auto",
     "claude-opus-4.6",
     "claude-sonnet-4.6",
+    "claude-opus-4.5",
+    "claude-sonnet-4.5",
+    "claude-sonnet-4",
     "claude-haiku-4.5",
+    "deepseek-3.2",
+    "minimax-m2.5",
+    "minimax-m2.1",
+    "glm-5",
+    "qwen3-coder-next",
 ]
 
 # Context window sizes for kiro-cli models (tokens)
+# Source: kiro-cli chat --list-models --format json
 KIRO_CONTEXT_LENGTHS = {
-    "claude-opus-4.6": 200_000,
-    "claude-sonnet-4.6": 200_000,
+    "auto": 1_000_000,
+    "claude-opus-4.6": 1_000_000,
+    "claude-sonnet-4.6": 1_000_000,
+    "claude-opus-4.5": 200_000,
+    "claude-sonnet-4.5": 200_000,
+    "claude-sonnet-4": 200_000,
     "claude-haiku-4.5": 200_000,
+    "deepseek-3.2": 164_000,
+    "minimax-m2.5": 196_000,
+    "minimax-m2.1": 196_000,
+    "glm-5": 200_000,
+    "qwen3-coder-next": 256_000,
 }
 
 # Max output tokens
 KIRO_MAX_OUTPUT = {
+    "auto": 32_000,
     "claude-opus-4.6": 32_000,
-    "claude-sonnet-4.6": 16_000,
+    "claude-sonnet-4.6": 32_000,
+    "claude-opus-4.5": 16_000,
+    "claude-sonnet-4.5": 16_000,
+    "claude-sonnet-4": 16_000,
     "claude-haiku-4.5": 8_192,
+    "deepseek-3.2": 16_000,
+    "minimax-m2.5": 16_000,
+    "minimax-m2.1": 16_000,
+    "glm-5": 16_000,
+    "qwen3-coder-next": 16_000,
 }
 
 
