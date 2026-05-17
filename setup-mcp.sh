@@ -48,7 +48,17 @@ echo -e "${GREEN}[3/5]${NC} arxiv (academic paper search)"
 $KIRO_CLI mcp add --name arxiv --command uvx --args "arxiv-mcp-server,--storage-path,$HOME/.arxiv-mcp-papers" --force 2>/dev/null || true
 
 echo -e "${GREEN}[4/5]${NC} tavily-remote (web search, crawl, extract)"
-$KIRO_CLI mcp add --name tavily-remote --command npx --args "-y,mcp-remote@latest,https://mcp.tavily.com/mcp/?tavilyApiKey=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" --force 2>/dev/null || true
+if [ -z "${TAVILY_API_KEY:-}" ]; then
+    echo -e "  ${YELLOW}⚠ TAVILY_API_KEY not set. Get one free at https://tavily.com${NC}"
+    read -p "  Enter your Tavily API key (or press Enter to skip): " TAVILY_KEY
+    if [ -z "$TAVILY_KEY" ]; then
+        echo "  Skipping tavily (you can add it later with: kiro-cli mcp add ...)"
+    else
+        $KIRO_CLI mcp add --name tavily-remote --command npx --args "-y,mcp-remote@latest,https://mcp.tavily.com/mcp/?tavilyApiKey=${TAVILY_KEY}" --force 2>/dev/null || true
+    fi
+else
+    $KIRO_CLI mcp add --name tavily-remote --command npx --args "-y,mcp-remote@latest,https://mcp.tavily.com/mcp/?tavilyApiKey=${TAVILY_API_KEY}" --force 2>/dev/null || true
+fi
 
 echo -e "${GREEN}[5/5]${NC} Context7 (library documentation)"
 $KIRO_CLI mcp add --name Context7 --command npx --args "-y,@upstash/context7-mcp@latest" --force 2>/dev/null || true

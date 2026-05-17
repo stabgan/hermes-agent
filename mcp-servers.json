@@ -25,7 +25,7 @@
     },
     "tavily-remote": {
       "command": "npx",
-      "args": ["-y", "mcp-remote@latest", "https://mcp.tavily.com/mcp/?tavilyApiKey=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"],
+      "args": ["-y", "mcp-remote@latest", "https://mcp.tavily.com/mcp/?tavilyApiKey=YOUR_TAVILY_API_KEY"],
       "disabled": false,
       "autoApprove": ["tavily_search", "tavily_map", "tavily_extract"]
     },

@@ -217,6 +217,32 @@ hermes-agent/
 
 ---
 
+---
+
+## API Keys for MCP Servers
+
+Most MCP servers work without API keys. Only **Tavily** (web search) needs one:
+
+| Server | API Key? | How to Get |
+|--------|----------|------------|
+| steelmind | ❌ No | Works out of the box |
+| playwright | ❌ No | Works out of the box |
+| arxiv | ❌ No | Works out of the box |
+| Context7 | ❌ No | Works out of the box |
+| **tavily** | ✅ Yes | Free at [tavily.com](https://tavily.com) |
+
+**Option A:** Set env var before running setup:
+```bash
+export TAVILY_API_KEY="tvly-your-key-here"
+./setup-mcp.sh
+```
+
+**Option B:** The script prompts you interactively if the env var isn't set.
+
+**Option C:** Skip Tavily entirely — the other 4 servers give you reasoning, browser, papers, and docs without any key.
+
+---
+
 ## Troubleshooting
 
 | Problem | Fix |
