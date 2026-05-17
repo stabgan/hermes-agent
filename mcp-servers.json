@@ -1,0 +1,39 @@
+{
+  "mcpServers": {
+    "steelmind": {
+      "command": "npx",
+      "args": ["-y", "@stabgan/steelmind-mcp@latest"],
+      "disabled": false,
+      "autoApprove": ["think", "verify"]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"],
+      "disabled": false,
+      "autoApprove": [
+        "browser_navigate", "browser_snapshot", "browser_click",
+        "browser_evaluate", "browser_type", "browser_close",
+        "browser_wait_for", "browser_navigate_back",
+        "browser_take_screenshot", "browser_press_key", "browser_resize"
+      ]
+    },
+    "arxiv": {
+      "command": "uvx",
+      "args": ["arxiv-mcp-server", "--storage-path", "~/.arxiv-mcp-papers"],
+      "disabled": false,
+      "autoApprove": ["search_papers", "download_paper", "list_papers", "read_paper", "get_abstract"]
+    },
+    "tavily-remote": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote@latest", "https://mcp.tavily.com/mcp/?tavilyApiKey=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"],
+      "disabled": false,
+      "autoApprove": ["tavily_search", "tavily_map", "tavily_extract"]
+    },
+    "Context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp@latest"],
+      "disabled": false,
+      "autoApprove": ["resolve-library-id", "query-docs"]
+    }
+  }
+}

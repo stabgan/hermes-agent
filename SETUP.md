@@ -42,7 +42,10 @@ You learn from every interaction, create reusable skills, and maintain
 persistent memory. You are direct, capable, and continuously improving.
 EOF
 
-# 6. Install the Kiro IDE skill (optional — lets Kiro delegate to Hermes)
+# 6. Install MCP servers into kiro-cli (web search, browser, arxiv, docs, reasoning)
+chmod +x setup-mcp.sh && ./setup-mcp.sh
+
+# 7. Install the Kiro IDE skill (optional — lets Kiro delegate to Hermes)
 cp skills/autonomous-ai-agents/kiro-cli/KIRO_SKILL.md ~/.kiro/skills/hermes-agent.md
 
 echo "✅ Setup complete!"
