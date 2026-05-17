@@ -149,6 +149,44 @@ hermes status
 
 ---
 
+## Context Window & Session Management
+
+**You have 1M tokens of context** with Claude Opus 4.6. That's roughly 750K words or ~3000 pages of text in a single conversation.
+
+Hermes auto-compresses at 50% (500K tokens) so you'll never hit the wall unexpectedly. But you can also manage it manually:
+
+### Slash Commands (inside interactive chat)
+
+| Command | What It Does |
+|---------|-------------|
+| `/new` | Start fresh session (new ID, clean history, CLI stays open) |
+| `/clear` | Wipe terminal + start new session |
+| `/compress` | Manually compress context when things get long |
+| `/status` | Show token usage, model, session info |
+| `/save` | Save conversation to disk without ending |
+| `/history` | Print current conversation inline |
+| `/goal <task>` | Set a persistent goal that auto-continues until done |
+| `/steer <note>` | Nudge direction mid-task without interrupting |
+| `/copy` | Copy last response to clipboard |
+
+### Session Lifecycle
+
+```
+Start → Work → (auto-compress at 500K tokens) → Keep working → /new when done
+                                                              → /compress to reclaim space
+                                                              → hermes --resume to continue later
+```
+
+### Practical Tips
+
+- **Long sessions:** Hermes auto-compresses. You don't need to manage context manually.
+- **Fresh start:** Type `/new` inside chat, or just restart hermes without `--resume`.
+- **Save progress:** Memory persists automatically. `/new` starts fresh chat but memory stays.
+- **Resume later:** `hermes --resume` picks up where you left off (full history).
+- **Multiple projects:** Each directory gets its own session history. `cd` to the project first.
+
+---
+
 ## Project Structure
 
 ```
